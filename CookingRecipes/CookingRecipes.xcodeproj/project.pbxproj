@@ -6,41 +6,81 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E8DAC7A12D591CAD00E71EC9 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DAC7A02D591CAD00E71EC9 /* Domain.framework */; };
+		E8DAC7A22D591CAD00E71EC9 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8DAC7A02D591CAD00E71EC9 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E8DAC7F22D5931FE00E71EC9 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DAC7F12D5931FE00E71EC9 /* Data.framework */; };
+		E8DAC7F32D5931FE00E71EC9 /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8DAC7F12D5931FE00E71EC9 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
-		E8DAC6F92D5917D300E71EC9 /* PBXContainerItemProxy */ = {
+		E8DAC74D2D591B3D00E71EC9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E8DAC6DF2D5917D200E71EC9 /* Project object */;
+			containerPortal = E8DAC72E2D591B3C00E71EC9 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E8DAC6E62D5917D200E71EC9;
+			remoteGlobalIDString = E8DAC7352D591B3C00E71EC9;
 			remoteInfo = CookingRecipes;
 		};
-		E8DAC7032D5917D300E71EC9 /* PBXContainerItemProxy */ = {
+		E8DAC7572D591B3D00E71EC9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E8DAC6DF2D5917D200E71EC9 /* Project object */;
+			containerPortal = E8DAC72E2D591B3C00E71EC9 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E8DAC6E62D5917D200E71EC9;
+			remoteGlobalIDString = E8DAC7352D591B3C00E71EC9;
 			remoteInfo = CookingRecipes;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E8DAC7A32D591CAD00E71EC9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E8DAC7F32D5931FE00E71EC9 /* Data.framework in Embed Frameworks */,
+				E8DAC7A22D591CAD00E71EC9 /* Domain.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		E8DAC6E72D5917D200E71EC9 /* CookingRecipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookingRecipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8DAC6F82D5917D300E71EC9 /* CookingRecipesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookingRecipesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8DAC7022D5917D300E71EC9 /* CookingRecipesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookingRecipesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8DAC7362D591B3C00E71EC9 /* CookingRecipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookingRecipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8DAC74C2D591B3D00E71EC9 /* CookingRecipesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookingRecipesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8DAC7562D591B3D00E71EC9 /* CookingRecipesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookingRecipesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8DAC7702D591B9100E71EC9 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8DAC7742D591B9500E71EC9 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8DAC77A2D591C0C00E71EC9 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8DAC7A02D591CAD00E71EC9 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8DAC7F12D5931FE00E71EC9 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E8DAC75E2D591B3D00E71EC9 /* Exceptions for "CookingRecipes" folder in "CookingRecipes" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = E8DAC7352D591B3C00E71EC9 /* CookingRecipes */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		E8DAC6E92D5917D200E71EC9 /* CookingRecipes */ = {
+		E8DAC7382D591B3C00E71EC9 /* CookingRecipes */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E8DAC75E2D591B3D00E71EC9 /* Exceptions for "CookingRecipes" folder in "CookingRecipes" target */,
+			);
 			path = CookingRecipes;
 			sourceTree = "<group>";
 		};
-		E8DAC6FB2D5917D300E71EC9 /* CookingRecipesTests */ = {
+		E8DAC74F2D591B3D00E71EC9 /* CookingRecipesTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = CookingRecipesTests;
 			sourceTree = "<group>";
 		};
-		E8DAC7052D5917D300E71EC9 /* CookingRecipesUITests */ = {
+		E8DAC7592D591B3D00E71EC9 /* CookingRecipesUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = CookingRecipesUITests;
 			sourceTree = "<group>";
@@ -48,21 +88,23 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E8DAC6E42D5917D200E71EC9 /* Frameworks */ = {
+		E8DAC7332D591B3C00E71EC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8DAC7F22D5931FE00E71EC9 /* Data.framework in Frameworks */,
+				E8DAC7A12D591CAD00E71EC9 /* Domain.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8DAC7492D591B3D00E71EC9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E8DAC6F52D5917D300E71EC9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E8DAC6FF2D5917D300E71EC9 /* Frameworks */ = {
+		E8DAC7532D591B3D00E71EC9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -72,157 +114,171 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E8DAC6DE2D5917D200E71EC9 = {
+		E8DAC72D2D591B3C00E71EC9 = {
 			isa = PBXGroup;
 			children = (
-				E8DAC6E92D5917D200E71EC9 /* CookingRecipes */,
-				E8DAC6FB2D5917D300E71EC9 /* CookingRecipesTests */,
-				E8DAC7052D5917D300E71EC9 /* CookingRecipesUITests */,
-				E8DAC6E82D5917D200E71EC9 /* Products */,
+				E8DAC7382D591B3C00E71EC9 /* CookingRecipes */,
+				E8DAC74F2D591B3D00E71EC9 /* CookingRecipesTests */,
+				E8DAC7592D591B3D00E71EC9 /* CookingRecipesUITests */,
+				E8DAC76F2D591B9100E71EC9 /* Frameworks */,
+				E8DAC7372D591B3C00E71EC9 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E8DAC6E82D5917D200E71EC9 /* Products */ = {
+		E8DAC7372D591B3C00E71EC9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E8DAC6E72D5917D200E71EC9 /* CookingRecipes.app */,
-				E8DAC6F82D5917D300E71EC9 /* CookingRecipesTests.xctest */,
-				E8DAC7022D5917D300E71EC9 /* CookingRecipesUITests.xctest */,
+				E8DAC7362D591B3C00E71EC9 /* CookingRecipes.app */,
+				E8DAC74C2D591B3D00E71EC9 /* CookingRecipesTests.xctest */,
+				E8DAC7562D591B3D00E71EC9 /* CookingRecipesUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E8DAC76F2D591B9100E71EC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E8DAC7F12D5931FE00E71EC9 /* Data.framework */,
+				E8DAC7A02D591CAD00E71EC9 /* Domain.framework */,
+				E8DAC77A2D591C0C00E71EC9 /* Domain.framework */,
+				E8DAC7742D591B9500E71EC9 /* Domain.framework */,
+				E8DAC7702D591B9100E71EC9 /* Data.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E8DAC6E62D5917D200E71EC9 /* CookingRecipes */ = {
+		E8DAC7352D591B3C00E71EC9 /* CookingRecipes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E8DAC70C2D5917D300E71EC9 /* Build configuration list for PBXNativeTarget "CookingRecipes" */;
+			buildConfigurationList = E8DAC75F2D591B3D00E71EC9 /* Build configuration list for PBXNativeTarget "CookingRecipes" */;
 			buildPhases = (
-				E8DAC6E32D5917D200E71EC9 /* Sources */,
-				E8DAC6E42D5917D200E71EC9 /* Frameworks */,
-				E8DAC6E52D5917D200E71EC9 /* Resources */,
+				E8DAC7322D591B3C00E71EC9 /* Sources */,
+				E8DAC7332D591B3C00E71EC9 /* Frameworks */,
+				E8DAC7342D591B3C00E71EC9 /* Resources */,
+				E8DAC7A32D591CAD00E71EC9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				E8DAC6E92D5917D200E71EC9 /* CookingRecipes */,
+				E8DAC7382D591B3C00E71EC9 /* CookingRecipes */,
 			);
 			name = CookingRecipes;
 			packageProductDependencies = (
 			);
 			productName = CookingRecipes;
-			productReference = E8DAC6E72D5917D200E71EC9 /* CookingRecipes.app */;
+			productReference = E8DAC7362D591B3C00E71EC9 /* CookingRecipes.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E8DAC6F72D5917D300E71EC9 /* CookingRecipesTests */ = {
+		E8DAC74B2D591B3D00E71EC9 /* CookingRecipesTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E8DAC70F2D5917D300E71EC9 /* Build configuration list for PBXNativeTarget "CookingRecipesTests" */;
+			buildConfigurationList = E8DAC7642D591B3D00E71EC9 /* Build configuration list for PBXNativeTarget "CookingRecipesTests" */;
 			buildPhases = (
-				E8DAC6F42D5917D300E71EC9 /* Sources */,
-				E8DAC6F52D5917D300E71EC9 /* Frameworks */,
-				E8DAC6F62D5917D300E71EC9 /* Resources */,
+				E8DAC7482D591B3D00E71EC9 /* Sources */,
+				E8DAC7492D591B3D00E71EC9 /* Frameworks */,
+				E8DAC74A2D591B3D00E71EC9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E8DAC6FA2D5917D300E71EC9 /* PBXTargetDependency */,
+				E8DAC74E2D591B3D00E71EC9 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				E8DAC6FB2D5917D300E71EC9 /* CookingRecipesTests */,
+				E8DAC74F2D591B3D00E71EC9 /* CookingRecipesTests */,
 			);
 			name = CookingRecipesTests;
 			packageProductDependencies = (
 			);
 			productName = CookingRecipesTests;
-			productReference = E8DAC6F82D5917D300E71EC9 /* CookingRecipesTests.xctest */;
+			productReference = E8DAC74C2D591B3D00E71EC9 /* CookingRecipesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E8DAC7012D5917D300E71EC9 /* CookingRecipesUITests */ = {
+		E8DAC7552D591B3D00E71EC9 /* CookingRecipesUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E8DAC7122D5917D300E71EC9 /* Build configuration list for PBXNativeTarget "CookingRecipesUITests" */;
+			buildConfigurationList = E8DAC7672D591B3D00E71EC9 /* Build configuration list for PBXNativeTarget "CookingRecipesUITests" */;
 			buildPhases = (
-				E8DAC6FE2D5917D300E71EC9 /* Sources */,
-				E8DAC6FF2D5917D300E71EC9 /* Frameworks */,
-				E8DAC7002D5917D300E71EC9 /* Resources */,
+				E8DAC7522D591B3D00E71EC9 /* Sources */,
+				E8DAC7532D591B3D00E71EC9 /* Frameworks */,
+				E8DAC7542D591B3D00E71EC9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E8DAC7042D5917D300E71EC9 /* PBXTargetDependency */,
+				E8DAC7582D591B3D00E71EC9 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				E8DAC7052D5917D300E71EC9 /* CookingRecipesUITests */,
+				E8DAC7592D591B3D00E71EC9 /* CookingRecipesUITests */,
 			);
 			name = CookingRecipesUITests;
 			packageProductDependencies = (
 			);
 			productName = CookingRecipesUITests;
-			productReference = E8DAC7022D5917D300E71EC9 /* CookingRecipesUITests.xctest */;
+			productReference = E8DAC7562D591B3D00E71EC9 /* CookingRecipesUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E8DAC6DF2D5917D200E71EC9 /* Project object */ = {
+		E8DAC72E2D591B3C00E71EC9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1610;
 				TargetAttributes = {
-					E8DAC6E62D5917D200E71EC9 = {
+					E8DAC7352D591B3C00E71EC9 = {
 						CreatedOnToolsVersion = 16.1;
 					};
-					E8DAC6F72D5917D300E71EC9 = {
+					E8DAC74B2D591B3D00E71EC9 = {
 						CreatedOnToolsVersion = 16.1;
-						TestTargetID = E8DAC6E62D5917D200E71EC9;
+						TestTargetID = E8DAC7352D591B3C00E71EC9;
 					};
-					E8DAC7012D5917D300E71EC9 = {
+					E8DAC7552D591B3D00E71EC9 = {
 						CreatedOnToolsVersion = 16.1;
-						TestTargetID = E8DAC6E62D5917D200E71EC9;
+						TestTargetID = E8DAC7352D591B3C00E71EC9;
 					};
 				};
 			};
-			buildConfigurationList = E8DAC6E22D5917D200E71EC9 /* Build configuration list for PBXProject "CookingRecipes" */;
+			buildConfigurationList = E8DAC7312D591B3C00E71EC9 /* Build configuration list for PBXProject "CookingRecipes" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = E8DAC6DE2D5917D200E71EC9;
+			mainGroup = E8DAC72D2D591B3C00E71EC9;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = E8DAC6E82D5917D200E71EC9 /* Products */;
+			productRefGroup = E8DAC7372D591B3C00E71EC9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E8DAC6E62D5917D200E71EC9 /* CookingRecipes */,
-				E8DAC6F72D5917D300E71EC9 /* CookingRecipesTests */,
-				E8DAC7012D5917D300E71EC9 /* CookingRecipesUITests */,
+				E8DAC7352D591B3C00E71EC9 /* CookingRecipes */,
+				E8DAC74B2D591B3D00E71EC9 /* CookingRecipesTests */,
+				E8DAC7552D591B3D00E71EC9 /* CookingRecipesUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E8DAC6E52D5917D200E71EC9 /* Resources */ = {
+		E8DAC7342D591B3C00E71EC9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E8DAC6F62D5917D300E71EC9 /* Resources */ = {
+		E8DAC74A2D591B3D00E71EC9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E8DAC7002D5917D300E71EC9 /* Resources */ = {
+		E8DAC7542D591B3D00E71EC9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -232,21 +288,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E8DAC6E32D5917D200E71EC9 /* Sources */ = {
+		E8DAC7322D591B3C00E71EC9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E8DAC6F42D5917D300E71EC9 /* Sources */ = {
+		E8DAC7482D591B3D00E71EC9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E8DAC6FE2D5917D300E71EC9 /* Sources */ = {
+		E8DAC7522D591B3D00E71EC9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,20 +312,76 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E8DAC6FA2D5917D300E71EC9 /* PBXTargetDependency */ = {
+		E8DAC74E2D591B3D00E71EC9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E8DAC6E62D5917D200E71EC9 /* CookingRecipes */;
-			targetProxy = E8DAC6F92D5917D300E71EC9 /* PBXContainerItemProxy */;
+			target = E8DAC7352D591B3C00E71EC9 /* CookingRecipes */;
+			targetProxy = E8DAC74D2D591B3D00E71EC9 /* PBXContainerItemProxy */;
 		};
-		E8DAC7042D5917D300E71EC9 /* PBXTargetDependency */ = {
+		E8DAC7582D591B3D00E71EC9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E8DAC6E62D5917D200E71EC9 /* CookingRecipes */;
-			targetProxy = E8DAC7032D5917D300E71EC9 /* PBXContainerItemProxy */;
+			target = E8DAC7352D591B3C00E71EC9 /* CookingRecipes */;
+			targetProxy = E8DAC7572D591B3D00E71EC9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		E8DAC70A2D5917D300E71EC9 /* Debug */ = {
+		E8DAC7602D591B3D00E71EC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9M6XRM7NTX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CookingRecipes/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jhonatahan.CookingRecipes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E8DAC7612D591B3D00E71EC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9M6XRM7NTX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CookingRecipes/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jhonatahan.CookingRecipes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E8DAC7622D591B3D00E71EC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -321,18 +433,18 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		E8DAC70B2D5917D300E71EC9 /* Release */ = {
+		E8DAC7632D591B3D00E71EC9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -378,70 +490,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		E8DAC70D2D5917D300E71EC9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = CookingRecipes/CookingRecipes.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9M6XRM7NTX;
-				ENABLE_HARDENED_RUNTIME = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jhonatahan.CookingRecipes;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		E8DAC70E2D5917D300E71EC9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = CookingRecipes/CookingRecipes.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9M6XRM7NTX;
-				ENABLE_HARDENED_RUNTIME = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jhonatahan.CookingRecipes;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		E8DAC7102D5917D300E71EC9 /* Debug */ = {
+		E8DAC7652D591B3D00E71EC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -449,17 +508,18 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9M6XRM7NTX;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jhonatahan.CookingRecipesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CookingRecipes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CookingRecipes";
 			};
 			name = Debug;
 		};
-		E8DAC7112D5917D300E71EC9 /* Release */ = {
+		E8DAC7662D591B3D00E71EC9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -467,17 +527,18 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9M6XRM7NTX;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jhonatahan.CookingRecipesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CookingRecipes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CookingRecipes";
 			};
 			name = Release;
 		};
-		E8DAC7132D5917D300E71EC9 /* Debug */ = {
+		E8DAC7682D591B3D00E71EC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -489,11 +550,12 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = CookingRecipes;
 			};
 			name = Debug;
 		};
-		E8DAC7142D5917D300E71EC9 /* Release */ = {
+		E8DAC7692D591B3D00E71EC9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -505,6 +567,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = CookingRecipes;
 			};
 			name = Release;
@@ -512,43 +575,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E8DAC6E22D5917D200E71EC9 /* Build configuration list for PBXProject "CookingRecipes" */ = {
+		E8DAC7312D591B3C00E71EC9 /* Build configuration list for PBXProject "CookingRecipes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E8DAC70A2D5917D300E71EC9 /* Debug */,
-				E8DAC70B2D5917D300E71EC9 /* Release */,
+				E8DAC7622D591B3D00E71EC9 /* Debug */,
+				E8DAC7632D591B3D00E71EC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E8DAC70C2D5917D300E71EC9 /* Build configuration list for PBXNativeTarget "CookingRecipes" */ = {
+		E8DAC75F2D591B3D00E71EC9 /* Build configuration list for PBXNativeTarget "CookingRecipes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E8DAC70D2D5917D300E71EC9 /* Debug */,
-				E8DAC70E2D5917D300E71EC9 /* Release */,
+				E8DAC7602D591B3D00E71EC9 /* Debug */,
+				E8DAC7612D591B3D00E71EC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E8DAC70F2D5917D300E71EC9 /* Build configuration list for PBXNativeTarget "CookingRecipesTests" */ = {
+		E8DAC7642D591B3D00E71EC9 /* Build configuration list for PBXNativeTarget "CookingRecipesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E8DAC7102D5917D300E71EC9 /* Debug */,
-				E8DAC7112D5917D300E71EC9 /* Release */,
+				E8DAC7652D591B3D00E71EC9 /* Debug */,
+				E8DAC7662D591B3D00E71EC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E8DAC7122D5917D300E71EC9 /* Build configuration list for PBXNativeTarget "CookingRecipesUITests" */ = {
+		E8DAC7672D591B3D00E71EC9 /* Build configuration list for PBXNativeTarget "CookingRecipesUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E8DAC7132D5917D300E71EC9 /* Debug */,
-				E8DAC7142D5917D300E71EC9 /* Release */,
+				E8DAC7682D591B3D00E71EC9 /* Debug */,
+				E8DAC7692D591B3D00E71EC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E8DAC6DF2D5917D200E71EC9 /* Project object */;
+	rootObject = E8DAC72E2D591B3C00E71EC9 /* Project object */;
 }
