@@ -18,7 +18,7 @@ class RecipesMainTabBarController: UITabBarController {
         let recipeListVC = UINavigationController(rootViewController: RecipesListController.buildRecipesListController())
         recipeListVC.tabBarItem = UITabBarItem(title: "Recetas", image: UIImage(systemName: "list.bullet"), tag: 0)
 
-        let mapVC = UINavigationController(rootViewController: RecipesMapController())
+        let mapVC = UINavigationController(rootViewController: RecipesMapController.buildRecipesMapController())
         mapVC.tabBarItem = UITabBarItem(title: "Mapa", image: UIImage(systemName: "map"), tag: 1)
         viewControllers = [recipeListVC, mapVC]
     }
