@@ -11,7 +11,7 @@ import CoreLocation
 struct Recipe {
     let name: String
     let origin: String
-    let latitude: CLLocationDegrees
-    let longitude: CLLocationDegrees
+    let latitude: Float
+    let longitude: Float
     let imageUrl: String
 }

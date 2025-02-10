@@ -53,7 +53,7 @@ extension RecipesMapView: RecipesMapViewProtocol {
     func setLocations(recipes: [Recipe]) {
         var annotations: [MKPointAnnotation] = []
         recipes.forEach {
-            let coordinate = CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude)
+            let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees($0.latitude), longitude: CLLocationDegrees($0.longitude))
             let annotation = MKPointAnnotation()
             annotation.coordinate = coordinate
             annotation.title = $0.name

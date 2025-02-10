@@ -34,10 +34,10 @@ class RecipeCell: UITableViewCell {
         contentView.addSubview(recipeNameLabel)
 
         NSLayoutConstraint.activate([
-            recipeImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            recipeImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             recipeImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            recipeImageView.widthAnchor.constraint(equalToConstant: 60),
-            recipeImageView.heightAnchor.constraint(equalToConstant: 60),
+            recipeImageView.widthAnchor.constraint(equalToConstant: 50),
+            recipeImageView.heightAnchor.constraint(equalToConstant: 50),
 
             recipeNameLabel.leadingAnchor.constraint(equalTo: recipeImageView.trailingAnchor, constant: 10),
             recipeNameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Combine
+import Domain
 
 class RecipesListController: UIViewController {
 
@@ -15,11 +17,8 @@ class RecipesListController: UIViewController {
     
     // MARK: - Properties
 
-    private var recipes: [Recipe] = [
-        Recipe(name: "Paella", origin: "España", latitude: 39.4699, longitude: -0.3763, imageUrl: "https://example.com/paella.jpg"),
-        Recipe(name: "Sushi", origin: "Japón", latitude: 35.6895, longitude: 139.6917, imageUrl: "https://example.com/sushi.jpg"),
-        Recipe(name: "Tacos", origin: "México", latitude: 19.4326, longitude: -99.1332, imageUrl: "https://example.com/tacos.jpg")
-    ]
+    var viewModel: RecipesListViewModelProtocol?
+    private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Lifecycle
 
@@ -27,6 +26,8 @@ class RecipesListController: UIViewController {
         super.viewDidLoad()
         title = "Recetas"
         setupView()
+        setupBindings()
+        viewModel?.fetchRecipes()
     }
 
     init(view: RecipesListViewProtocol) {
@@ -44,7 +45,20 @@ class RecipesListController: UIViewController {
         guard let contentView = self.customView as? UIView else { return }
         self.view = contentView
         customView.delegate = self
-        customView.reloadRows(data: recipes)
+    }
+
+    func setupBindings() {
+        viewModel?.fillContentView
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: { [weak self] recipes in
+                self?.customView.reloadRows(data: recipes)
+            })
+            .store(in: &cancellables)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.fetchRecipes()
     }
 
 }
@@ -67,6 +81,10 @@ extension RecipesListController {
     class func buildRecipesListController() -> RecipesListController {
         let view = RecipesListView()
         let controller = RecipesListController(view: view)
+        let useCase = RecipesListUseCase()
+        let viewModel = RecipesListViewModel(useCase: useCase)
+        useCase.delegate = viewModel
+        controller.viewModel = viewModel
         return controller
     }
 }
