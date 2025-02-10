@@ -15,7 +15,7 @@ class RecipesDetailController: UIViewController {
 
     // MARK: - Properties
 
-    let recipe: Recipe
+    let recipe: RecipeModel
 
     // MARK: - Lifecycle
 
@@ -25,7 +25,7 @@ class RecipesDetailController: UIViewController {
         setupView()
     }
 
-    init(view: RecipesDetailViewProtocol, recipe: Recipe) {
+    init(view: RecipesDetailViewProtocol, recipe: RecipeModel) {
         self.customView = view
         self.recipe = recipe
         super.init(nibName: nil, bundle: nil)
@@ -48,7 +48,7 @@ class RecipesDetailController: UIViewController {
 
 extension RecipesDetailController: RecipesDetailViewDelegate {
 
-    func displayMap(recipe: Recipe) {
+    func displayMap(recipe: RecipeModel) {
         let view = RecipesMapView()
         let mapVC = RecipesMapController(view: view, recipes: [recipe])
         navigationController?.pushViewController(mapVC, animated: true)

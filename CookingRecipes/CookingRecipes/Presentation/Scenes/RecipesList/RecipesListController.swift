@@ -67,7 +67,7 @@ class RecipesListController: UIViewController {
 
 extension RecipesListController: RecipesListViewDelegate {
 
-    func didSelectRowRecipe(rowData: Recipe) {
+    func didSelectRowRecipe(rowData: RecipeModel) {
         let view = RecipesDetailView()
         let detailVC = RecipesDetailController(view: view, recipe: rowData)
         navigationController?.pushViewController(detailVC, animated: true)

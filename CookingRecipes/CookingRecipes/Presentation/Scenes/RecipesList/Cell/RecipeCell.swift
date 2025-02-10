@@ -48,7 +48,7 @@ class RecipeCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(with recipe: Recipe) {
+    func configure(with recipe: RecipeModel) {
         recipeNameLabel.text = recipe.name
         loadImage(from: recipe.imageUrl)
     }

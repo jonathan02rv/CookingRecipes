@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-struct Recipe {
+struct RecipeModel {
     let name: String
     let origin: String
     let latitude: Float

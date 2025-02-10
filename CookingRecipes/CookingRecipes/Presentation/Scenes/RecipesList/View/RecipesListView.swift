@@ -8,12 +8,12 @@
 import UIKit
 
 protocol RecipesListViewDelegate: AnyObject {
-    func didSelectRowRecipe(rowData: Recipe)
+    func didSelectRowRecipe(rowData: RecipeModel)
 }
 
 protocol RecipesListViewProtocol: NSObjectProtocol {
     var delegate: RecipesListViewDelegate? { get set }
-    func reloadRows(data: [Recipe])
+    func reloadRows(data: [RecipeModel])
 }
 
 final class RecipesListView: UIView {
@@ -25,8 +25,8 @@ final class RecipesListView: UIView {
 
     // MARK: - Properties
 
-    private var filteredRecipes: [Recipe] = []
-    private var allRecipes: [Recipe] = []
+    private var filteredRecipes: [RecipeModel] = []
+    private var allRecipes: [RecipeModel] = []
     weak var delegate: RecipesListViewDelegate?
 
     // MARK: - Lifecycle
@@ -126,7 +126,7 @@ extension RecipesListView: UITableViewDelegate {
 
 extension RecipesListView: RecipesListViewProtocol {
 
-    func reloadRows(data: [Recipe]) {
+    func reloadRows(data: [RecipeModel]) {
         allRecipes = data
         filteredRecipes = allRecipes
         tableView.reloadData()

@@ -15,7 +15,7 @@ class RecipesMapController: UIViewController {
 
     // MARK: - Properties
 
-    let recipes: [Recipe]
+    let recipes: [RecipeModel]
 
     // MARK: - Lifecycle
 
@@ -25,7 +25,7 @@ class RecipesMapController: UIViewController {
         setupView()
     }
 
-    init(view: RecipesMapViewProtocol, recipes: [Recipe]) {
+    init(view: RecipesMapViewProtocol, recipes: [RecipeModel]) {
         self.customView = view
         self.recipes = recipes
         super.init(nibName: nil, bundle: nil)
@@ -49,10 +49,10 @@ class RecipesMapController: UIViewController {
 
 extension RecipesMapController {
     class func buildRecipesMapController() -> RecipesMapController {
-        let recipes: [Recipe] = [
-            Recipe(name: "Paella", origin: "España", latitude: 39.4699, longitude: -0.3763, imageUrl: "https://example.com/paella.jpg"),
-            Recipe(name: "Sushi", origin: "Japón", latitude: 35.6895, longitude: 139.6917, imageUrl: "https://example.com/sushi.jpg"),
-            Recipe(name: "Tacos", origin: "México", latitude: 19.4326, longitude: -99.1332, imageUrl: "https://example.com/tacos.jpg")
+        let recipes: [RecipeModel] = [
+            RecipeModel(name: "Paella", origin: "España", latitude: 39.4699, longitude: -0.3763, imageUrl: "https://example.com/paella.jpg"),
+            RecipeModel(name: "Sushi", origin: "Japón", latitude: 35.6895, longitude: 139.6917, imageUrl: "https://example.com/sushi.jpg"),
+            RecipeModel(name: "Tacos", origin: "México", latitude: 19.4326, longitude: -99.1332, imageUrl: "https://example.com/tacos.jpg")
         ]
         let view = RecipesMapView()
         let controller = RecipesMapController(view: view, recipes: recipes)

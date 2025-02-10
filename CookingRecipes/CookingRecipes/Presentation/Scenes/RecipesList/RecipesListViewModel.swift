@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 protocol RecipesListViewModelProtocol {
-    var fillContentView: PassthroughSubject<[Recipe], Never> { get }
+    var fillContentView: PassthroughSubject<[RecipeModel], Never> { get }
     func fetchRecipes()
 }
 
@@ -18,7 +18,7 @@ class RecipesListViewModel: RecipesListViewModelProtocol {
 
     // MARK: - Binders
 
-    let fillContentView: PassthroughSubject<[Recipe], Never> = PassthroughSubject()
+    let fillContentView: PassthroughSubject<[RecipeModel], Never> = PassthroughSubject()
 
     let useCase: RecipesListUseCaseProtocol
 
@@ -33,9 +33,9 @@ class RecipesListViewModel: RecipesListViewModelProtocol {
 }
 
 extension RecipesListViewModel: RecipesListUseCaseDelegate {
-    func reloadRecipes(recipes: [RecipeModel]) {
-        let recipesViewData: [Recipe] = recipes.map {
-            Recipe(name: $0.name, origin: $0.origin, latitude: $0.latitude, longitude: $0.longitude, imageUrl: $0.imageUrl)
+    func reloadRecipes(recipes: [RecipeBusinessModel]) {
+        let recipesViewData: [RecipeModel] = recipes.map {
+            RecipeModel(name: $0.name, origin: $0.origin, latitude: $0.latitude, longitude: $0.longitude, imageUrl: $0.imageUrl)
         }
         fillContentView.send(recipesViewData)
     }

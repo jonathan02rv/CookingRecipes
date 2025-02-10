@@ -8,12 +8,12 @@
 import UIKit
 
 protocol RecipesDetailViewDelegate: AnyObject {
-    func displayMap(recipe: Recipe)
+    func displayMap(recipe: RecipeModel)
 }
 
 protocol RecipesDetailViewProtocol: NSObjectProtocol {
     var delegate: RecipesDetailViewDelegate? { get set }
-    func fillContent(data: Recipe)
+    func fillContent(data: RecipeModel)
 }
 
 final class RecipesDetailView: UIView {
@@ -60,7 +60,7 @@ final class RecipesDetailView: UIView {
 
     // MARK: - Properties
 
-    var recipe: Recipe?
+    var recipe: RecipeModel?
     weak var delegate: RecipesDetailViewDelegate?
 
     // MARK: - Lifecycle
@@ -123,7 +123,7 @@ final class RecipesDetailView: UIView {
 
 extension RecipesDetailView: RecipesDetailViewProtocol {
 
-    func fillContent(data: Recipe) {
+    func fillContent(data: RecipeModel) {
         recipeNameLabel.text = data.name
         originLabel.text = "Origen: \(data.origin)"
         loadImage(from: data.imageUrl)
