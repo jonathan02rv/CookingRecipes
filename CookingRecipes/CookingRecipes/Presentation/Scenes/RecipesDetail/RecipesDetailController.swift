@@ -41,6 +41,23 @@ class RecipesDetailController: UIViewController {
         guard let contentView = self.customView as? UIView else { return }
         self.view = contentView
         customView.fillContent(data: recipe)
+        customView.delegate = self
     }
 
+    @objc func mapButtonTapped2() {
+        let view = RecipesMapView()
+        let mapVC = RecipesMapController(view: view, recipe: recipe)
+        navigationController?.pushViewController(mapVC, animated: true)
+    }
+    
+}
+
+extension RecipesDetailController: RecipesDetailViewDelegate {
+
+    func displayMap(recipe: Recipe) {
+        let view = RecipesMapView()
+        let mapVC = RecipesMapController(view: view, recipe: recipe)
+        navigationController?.pushViewController(mapVC, animated: true)
+    }
+    
 }

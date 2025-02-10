@@ -7,7 +7,12 @@
 
 import UIKit
 
+protocol RecipesDetailViewDelegate: AnyObject {
+    func displayMap(recipe: Recipe)
+}
+
 protocol RecipesDetailViewProtocol: NSObjectProtocol {
+    var delegate: RecipesDetailViewDelegate? { get set }
     func fillContent(data: Recipe)
 }
 
@@ -19,6 +24,11 @@ final class RecipesDetailView: UIView {
     let originLabel = UILabel()
     let mapButton = UIButton(type: .system)
     let stackView = UIStackView()
+
+    // MARK: - Properties
+
+    var recipe: Recipe?
+    weak var delegate: RecipesDetailViewDelegate?
 
     // MARK: - Lifecycle
 
@@ -42,6 +52,7 @@ final class RecipesDetailView: UIView {
         originLabel.textAlignment = .center
 
         mapButton.setTitle("Ver en el mapa", for: .normal)
+        mapButton.addTarget(self, action: #selector(mapButtonTapped), for: .touchUpInside)
 
         stackView.addArrangedSubview(nameLabel)
         stackView.addArrangedSubview(originLabel)
@@ -61,6 +72,11 @@ final class RecipesDetailView: UIView {
         ])
     }
 
+    @objc func mapButtonTapped() {
+        guard let recipe = self.recipe else { return }
+        delegate?.displayMap(recipe: recipe)
+    }
+
 }
 
 // MARK: - RecipesDetailViewProtocol
@@ -70,6 +86,7 @@ extension RecipesDetailView: RecipesDetailViewProtocol {
     func fillContent(data: Recipe) {
         nameLabel.text = data.name
         originLabel.text = "Origen: \(data.origin)"
+        self.recipe = data
     }
 
 }

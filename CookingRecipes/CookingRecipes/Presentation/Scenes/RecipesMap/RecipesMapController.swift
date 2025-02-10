@@ -40,7 +40,7 @@ class RecipesMapController: UIViewController {
     func setupView() {
         guard let contentView = self.customView as? UIView else { return }
         self.view = contentView
-        customView.setLocation(latitude: recipe.latitude, longitude: recipe.longitude)
+        customView.setLocation(recipe: recipe)
     }
 
 }

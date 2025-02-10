@@ -18,14 +18,14 @@ protocol RecipesListViewProtocol: NSObjectProtocol {
 
 final class RecipesListView: UIView {
 
+    // MARK: - Views
+
+    private let tableView = UITableView()
+
     // MARK: - Properties
 
     var recipes: [Recipe] = []
     weak var delegate: RecipesListViewDelegate?
-
-    // MARK: - Views
-
-    private let tableView = UITableView()
 
     // MARK: - Lifecycle
 
