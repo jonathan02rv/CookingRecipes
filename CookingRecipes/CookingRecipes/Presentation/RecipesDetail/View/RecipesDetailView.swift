@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol RecipesDetailViewProtocol {
+protocol RecipesDetailViewProtocol: NSObjectProtocol {
     func fillContent(data: Recipe)
 }
 
@@ -51,6 +51,7 @@ final class RecipesDetailView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
 
         addSubview(stackView)
+        setupConstraints()
     }
 
     private func setupConstraints() {

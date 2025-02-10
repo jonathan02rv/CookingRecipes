@@ -11,7 +11,7 @@ protocol RecipesListViewDelegate: AnyObject {
     func didSelectRowRecipe(rowData: Recipe)
 }
 
-protocol RecipesListViewProtocol {
+protocol RecipesListViewProtocol: NSObjectProtocol {
     var delegate: RecipesListViewDelegate? { get set }
     func reloadRows(data: [Recipe])
 }

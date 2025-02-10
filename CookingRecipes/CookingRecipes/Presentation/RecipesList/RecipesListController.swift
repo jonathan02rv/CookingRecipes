@@ -9,7 +9,12 @@ import UIKit
 
 class RecipesListController: UIViewController {
 
-    var customView: (UIView & RecipesListViewProtocol)?
+    // MARK: - CustomView
+
+    private let customView: RecipesListViewProtocol
+    
+    // MARK: - Properties
+
     var recipes: [Recipe] = [
             Recipe(name: "Paella", origin: "España", latitude: 39.4699, longitude: -0.3763),
             Recipe(name: "Sushi", origin: "Japón", latitude: 35.6895, longitude: 139.6917)
@@ -20,27 +25,25 @@ class RecipesListController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Recetas"
-        view.backgroundColor = .yellow
         setupView()
     }
 
-    init(view: (RecipesListView & RecipesListViewProtocol)) {
+    init(view: RecipesListViewProtocol) {
         self.customView = view
         super.init(nibName: nil, bundle: nil)
     }
 
-    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: - Functions
 
     func setupView() {
-        guard let contentView = customView else { return }
+        guard let contentView = self.customView as? UIView else { return }
         self.view = contentView
-        customView?.delegate = self
-        customView?.reloadRows(data: recipes)
+        customView.delegate = self
+        customView.reloadRows(data: recipes)
     }
 
 }
@@ -50,8 +53,9 @@ class RecipesListController: UIViewController {
 extension RecipesListController: RecipesListViewDelegate {
 
     func didSelectRowRecipe(rowData: Recipe) {
-         let detailVC = RecipesDetailController()
-         navigationController?.pushViewController(detailVC, animated: true)
+        let view = RecipesDetailView()
+        let detailVC = RecipesDetailController(view: view, recipe: rowData)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 
 }
