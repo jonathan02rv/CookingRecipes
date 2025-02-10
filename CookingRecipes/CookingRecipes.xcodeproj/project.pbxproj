@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E8DAC7A12D591CAD00E71EC9 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DAC7A02D591CAD00E71EC9 /* Domain.framework */; };
-		E8DAC7A22D591CAD00E71EC9 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8DAC7A02D591CAD00E71EC9 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E8DAC7F22D5931FE00E71EC9 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DAC7F12D5931FE00E71EC9 /* Data.framework */; };
-		E8DAC7F32D5931FE00E71EC9 /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8DAC7F12D5931FE00E71EC9 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E8E1F7C22D5AC82600789709 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E1F7C12D5AC82600789709 /* Data.framework */; };
+		E8E1F7C32D5AC82600789709 /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8E1F7C12D5AC82600789709 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E8E1F7C62D5AC82900789709 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E1F7C52D5AC82900789709 /* Domain.framework */; };
+		E8E1F7C72D5AC82900789709 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8E1F7C52D5AC82900789709 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,14 +31,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E8DAC7A32D591CAD00E71EC9 /* Embed Frameworks */ = {
+		E8E1F7C42D5AC82600789709 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E8DAC7F32D5931FE00E71EC9 /* Data.framework in Embed Frameworks */,
-				E8DAC7A22D591CAD00E71EC9 /* Domain.framework in Embed Frameworks */,
+				E8E1F7C72D5AC82900789709 /* Domain.framework in Embed Frameworks */,
+				E8E1F7C32D5AC82600789709 /* Data.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,6 +54,8 @@
 		E8DAC77A2D591C0C00E71EC9 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8DAC7A02D591CAD00E71EC9 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8DAC7F12D5931FE00E71EC9 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8E1F7C12D5AC82600789709 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8E1F7C52D5AC82900789709 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -92,8 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8DAC7F22D5931FE00E71EC9 /* Data.framework in Frameworks */,
-				E8DAC7A12D591CAD00E71EC9 /* Domain.framework in Frameworks */,
+				E8E1F7C62D5AC82900789709 /* Domain.framework in Frameworks */,
+				E8E1F7C22D5AC82600789709 /* Data.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +140,8 @@
 		E8DAC76F2D591B9100E71EC9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E8E1F7C52D5AC82900789709 /* Domain.framework */,
+				E8E1F7C12D5AC82600789709 /* Data.framework */,
 				E8DAC7F12D5931FE00E71EC9 /* Data.framework */,
 				E8DAC7A02D591CAD00E71EC9 /* Domain.framework */,
 				E8DAC77A2D591C0C00E71EC9 /* Domain.framework */,
@@ -157,7 +161,7 @@
 				E8DAC7322D591B3C00E71EC9 /* Sources */,
 				E8DAC7332D591B3C00E71EC9 /* Frameworks */,
 				E8DAC7342D591B3C00E71EC9 /* Resources */,
-				E8DAC7A32D591CAD00E71EC9 /* Embed Frameworks */,
+				E8E1F7C42D5AC82600789709 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

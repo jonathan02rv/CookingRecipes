@@ -8,6 +8,7 @@
 import UIKit
 import Combine
 import Domain
+import Data
 
 class RecipesListController: UIViewController {
 
@@ -81,7 +82,7 @@ extension RecipesListController {
     class func buildRecipesListController() -> RecipesListController {
         let view = RecipesListView()
         let controller = RecipesListController(view: view)
-        let useCase = RecipesListUseCase()
+        let useCase = RecipesListUseCase(repository: RecipesListRepository())
         let viewModel = RecipesListViewModel(useCase: useCase)
         useCase.delegate = viewModel
         controller.viewModel = viewModel

@@ -7,8 +7,16 @@
 
 import Foundation
 
+public enum ErrorType: String, Error {
+    case badURL
+    case parseError
+    case netWorkError
+    case generic
+}
+
 public protocol RecipesListUseCaseDelegate: AnyObject {
     func reloadRecipes(recipes: [RecipeBusinessModel])
+    func handleError(errorType: ErrorType)
 }
 
 public protocol RecipesListUseCaseProtocol {
@@ -21,18 +29,23 @@ public class RecipesListUseCase: RecipesListUseCaseProtocol {
     var recipes = [RecipeBusinessModel]()
 
     public weak var delegate: RecipesListUseCaseDelegate?
-    var repository: RecipesListRepositoryProtocol?
+    let repository: RecipesListRepositoryProtocol
 
-    public init() {}
+    public init(repository: RecipesListRepositoryProtocol) {
+        self.repository = repository
+    }
 
     public func fetchRecipes() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-            let recipes: [RecipeBusinessModel] = [
-                RecipeBusinessModel(name: "Paella", origin: "España", latitude: 39.4699, longitude: -0.3763, imageUrl: "https://www.cuisinart.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-us-cuisinart-sfra-Library/default/dwd5637729/images/recipe-Images/tacos-americanos-recipe.jpg"),
-                RecipeBusinessModel(name: "Sushi", origin: "Japón", latitude: 35.6895, longitude: 139.6917, imageUrl: "https://example.com/sushi.jpg"),
-                RecipeBusinessModel(name: "Tacos", origin: "México", latitude: 19.4326, longitude: -99.1332, imageUrl: "https://example.com/tacos.jpg")
-            ]
-            self?.delegate?.reloadRecipes(recipes: recipes)
+        Task {
+            do {
+                let recipesModel = try await repository.fetchRecipes()
+                recipes = recipesModel
+                print("recipesModel Domain: \(recipesModel)")
+                delegate?.reloadRecipes(recipes: recipesModel)
+            } catch {
+                let errorType = (error as? ErrorType)
+                delegate?.handleError(errorType: errorType ?? .generic)
+            }
         }
     }
 
