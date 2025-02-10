@@ -14,7 +14,11 @@ protocol RecipesMapViewProtocol: NSObjectProtocol {
 
 final class RecipesMapView: UIView {
 
+    // MARK: - Views
+
     private let mapView = MKMapView()
+
+    // MARK: - Lifecycle
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,6 +29,8 @@ final class RecipesMapView: UIView {
         super.init(coder: coder)
         setupMap()
     }
+
+    // MARK: - Functions
 
     private func setupMap() {
         mapView.translatesAutoresizingMaskIntoConstraints = false
@@ -39,6 +45,8 @@ final class RecipesMapView: UIView {
     }
 
 }
+
+// MARK: - RecipesMapViewProtocol
 
 extension RecipesMapView: RecipesMapViewProtocol {
 
