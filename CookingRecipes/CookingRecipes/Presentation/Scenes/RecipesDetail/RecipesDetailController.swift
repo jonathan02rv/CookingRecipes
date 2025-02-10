@@ -44,19 +44,13 @@ class RecipesDetailController: UIViewController {
         customView.delegate = self
     }
 
-    @objc func mapButtonTapped2() {
-        let view = RecipesMapView()
-        let mapVC = RecipesMapController(view: view, recipe: recipe)
-        navigationController?.pushViewController(mapVC, animated: true)
-    }
-    
 }
 
 extension RecipesDetailController: RecipesDetailViewDelegate {
 
     func displayMap(recipe: Recipe) {
         let view = RecipesMapView()
-        let mapVC = RecipesMapController(view: view, recipe: recipe)
+        let mapVC = RecipesMapController(view: view, recipes: [recipe])
         navigationController?.pushViewController(mapVC, animated: true)
     }
     

@@ -15,7 +15,7 @@ class RecipesMapController: UIViewController {
 
     // MARK: - Properties
 
-    let recipe: Recipe
+    let recipes: [Recipe]
 
     // MARK: - Lifecycle
 
@@ -25,9 +25,9 @@ class RecipesMapController: UIViewController {
         setupView()
     }
 
-    init(view: RecipesMapViewProtocol, recipe: Recipe) {
+    init(view: RecipesMapViewProtocol, recipes: [Recipe]) {
         self.customView = view
-        self.recipe = recipe
+        self.recipes = recipes
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -40,7 +40,7 @@ class RecipesMapController: UIViewController {
     func setupView() {
         guard let contentView = self.customView as? UIView else { return }
         self.view = contentView
-        customView.setLocation(recipe: recipe)
+        customView.setLocations(recipes: recipes)
     }
 
 }
@@ -55,7 +55,7 @@ extension RecipesMapController {
             ]
 
         let view = RecipesMapView()
-        let controller = RecipesMapController(view: view, recipe: recipes.first!)
+        let controller = RecipesMapController(view: view, recipes: recipes)
         return controller
     }
 }

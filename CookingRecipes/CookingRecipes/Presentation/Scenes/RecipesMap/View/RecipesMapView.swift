@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 
 protocol RecipesMapViewProtocol: NSObjectProtocol {
-    func setLocation(recipe: Recipe)
+    func setLocations(recipes: [Recipe])
 }
 
 final class RecipesMapView: UIView {
@@ -50,15 +50,22 @@ final class RecipesMapView: UIView {
 
 extension RecipesMapView: RecipesMapViewProtocol {
 
-    func setLocation(recipe: Recipe) {
-        let coordinate = CLLocationCoordinate2D(latitude: recipe.latitude, longitude: recipe.longitude)
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = coordinate
-        annotation.title = recipe.name
-        annotation.subtitle = "Origen: \(recipe.origin)"
-        mapView.addAnnotation(annotation)
-        let region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5))
-        mapView.setRegion(region, animated: true)
+    func setLocations(recipes: [Recipe]) {
+        var annotations: [MKPointAnnotation] = []
+        recipes.forEach {
+            let coordinate = CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = coordinate
+            annotation.title = $0.name
+            annotation.subtitle = "Origen: \($0.origin)"
+            annotations.append(annotation)
+        }
+        mapView.addAnnotations(annotations)
+        if !annotations.isEmpty {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.mapView.showAnnotations(annotations, animated: true)
+            }
+        }
     }
 
 }
