@@ -20,11 +20,13 @@ final class RecipesListView: UIView {
 
     // MARK: - Views
 
+    private let searchBar = UISearchBar()
     private let tableView = UITableView()
 
     // MARK: - Properties
 
-    var recipes: [Recipe] = []
+    private var filteredRecipes: [Recipe] = []
+    private var allRecipes: [Recipe] = []
     weak var delegate: RecipesListViewDelegate?
 
     // MARK: - Lifecycle
@@ -42,13 +44,18 @@ final class RecipesListView: UIView {
     // MARK: - Functions
 
     private func setupView() {
+        addSubview(searchBar)
         addSubview(tableView)
+        setupSearchBarView()
         setupTableview()
         setupConstraints()
     }
 
+    func setupSearchBarView() {
+        searchBar.placeholder = "Busca tu receta..."
+        searchBar.delegate = self
+    }
     func setupTableview() {
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
         tableView.delegate = self
@@ -56,14 +63,35 @@ final class RecipesListView: UIView {
     }
 
     func setupConstraints() {
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: topAnchor),
-            tableView.leftAnchor.constraint(equalTo: leftAnchor),
-            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            searchBar.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
+            searchBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+
+            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 10),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
-    
+
+}
+
+// MARK: - UISearchBarDelegate
+
+extension RecipesListView: UISearchBarDelegate {
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            filteredRecipes = allRecipes
+        } else {
+            filteredRecipes = allRecipes.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+        }
+        tableView.reloadData()
+    }
+
 }
 
 // MARK: - UITableViewDataSource
@@ -71,12 +99,12 @@ final class RecipesListView: UIView {
 extension RecipesListView: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        recipes.count
+        filteredRecipes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = recipes[indexPath.row].name
+        cell.textLabel?.text = filteredRecipes[indexPath.row].name
         return cell
     }
 
@@ -88,7 +116,7 @@ extension RecipesListView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let recipeSelected = recipes[indexPath.row]
+        let recipeSelected = filteredRecipes[indexPath.row]
         delegate?.didSelectRowRecipe(rowData: recipeSelected)
     }
 
@@ -99,12 +127,9 @@ extension RecipesListView: UITableViewDelegate {
 extension RecipesListView: RecipesListViewProtocol {
 
     func reloadRows(data: [Recipe]) {
-        recipes = data
+        allRecipes = data
+        filteredRecipes = allRecipes
         tableView.reloadData()
-    }
-
-    func buildView() {
-        setupView()
     }
 
 }
