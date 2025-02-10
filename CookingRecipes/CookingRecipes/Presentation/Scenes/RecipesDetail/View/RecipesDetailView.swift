@@ -20,10 +20,43 @@ final class RecipesDetailView: UIView {
 
     // MARK: - Views
 
-    let nameLabel = UILabel()
-    let originLabel = UILabel()
-    let mapButton = UIButton(type: .system)
-    let stackView = UIStackView()
+    let recipeImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 12
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+
+    let recipeNameLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    let originLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    let mapButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Ver en el mapa", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
+    let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
 
     // MARK: - Properties
 
@@ -45,28 +78,24 @@ final class RecipesDetailView: UIView {
     // MARK: - Functions
 
     private func setupView() {
-        nameLabel.font = UIFont.boldSystemFont(ofSize: 24)
-        nameLabel.textAlignment = .center
-
-        originLabel.font = UIFont.systemFont(ofSize: 18)
-        originLabel.textAlignment = .center
-
-        mapButton.setTitle("Ver en el mapa", for: .normal)
-        mapButton.addTarget(self, action: #selector(mapButtonTapped), for: .touchUpInside)
-
-        stackView.addArrangedSubview(nameLabel)
+        stackView.addArrangedSubview(recipeNameLabel)
         stackView.addArrangedSubview(originLabel)
         stackView.addArrangedSubview(mapButton)
         stackView.axis = .vertical
         stackView.spacing = 20
         stackView.translatesAutoresizingMaskIntoConstraints = false
-
+        addSubview(recipeImageView)
         addSubview(stackView)
         setupConstraints()
+        mapButton.addTarget(self, action: #selector(mapButtonTapped), for: .touchUpInside)
     }
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
+            recipeImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            recipeImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            recipeImageView.widthAnchor.constraint(equalToConstant: 200),
+            recipeImageView.heightAnchor.constraint(equalToConstant: 200),
             stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
@@ -77,6 +106,17 @@ final class RecipesDetailView: UIView {
         delegate?.displayMap(recipe: recipe)
     }
 
+    private func loadImage(from urlString: String) {
+        guard let url = URL(string: urlString) else { return }
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    self.recipeImageView.image = image
+                }
+            }
+        }
+    }
+
 }
 
 // MARK: - RecipesDetailViewProtocol
@@ -84,8 +124,9 @@ final class RecipesDetailView: UIView {
 extension RecipesDetailView: RecipesDetailViewProtocol {
 
     func fillContent(data: Recipe) {
-        nameLabel.text = data.name
+        recipeNameLabel.text = data.name
         originLabel.text = "Origen: \(data.origin)"
+        loadImage(from: data.imageUrl)
         self.recipe = data
     }
 

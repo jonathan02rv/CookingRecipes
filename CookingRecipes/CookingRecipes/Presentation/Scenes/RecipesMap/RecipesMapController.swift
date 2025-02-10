@@ -50,10 +50,10 @@ class RecipesMapController: UIViewController {
 extension RecipesMapController {
     class func buildRecipesMapController() -> RecipesMapController {
         let recipes: [Recipe] = [
-                Recipe(name: "Paella", origin: "España", latitude: 39.4699, longitude: -0.3763),
-                Recipe(name: "Sushi", origin: "Japón", latitude: 35.6895, longitude: 139.6917)
-            ]
-
+            Recipe(name: "Paella", origin: "España", latitude: 39.4699, longitude: -0.3763, imageUrl: "https://example.com/paella.jpg"),
+            Recipe(name: "Sushi", origin: "Japón", latitude: 35.6895, longitude: 139.6917, imageUrl: "https://example.com/sushi.jpg"),
+            Recipe(name: "Tacos", origin: "México", latitude: 19.4326, longitude: -99.1332, imageUrl: "https://example.com/tacos.jpg")
+        ]
         let view = RecipesMapView()
         let controller = RecipesMapController(view: view, recipes: recipes)
         return controller

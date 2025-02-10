@@ -56,7 +56,7 @@ final class RecipesListView: UIView {
         searchBar.delegate = self
     }
     func setupTableview() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(RecipeCell.self, forCellReuseIdentifier: RecipeCell.reuseIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .singleLine
@@ -103,8 +103,8 @@ extension RecipesListView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = filteredRecipes[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: RecipeCell.reuseIdentifier, for: indexPath) as! RecipeCell
+        cell.configure(with: filteredRecipes[indexPath.row])
         return cell
     }
 

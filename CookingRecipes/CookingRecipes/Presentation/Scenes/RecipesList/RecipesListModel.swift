@@ -13,4 +13,5 @@ struct Recipe {
     let origin: String
     let latitude: CLLocationDegrees
     let longitude: CLLocationDegrees
+    let imageUrl: String
 }
