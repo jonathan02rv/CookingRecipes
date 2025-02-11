@@ -1,39 +1,36 @@
 //
-//  RecipeEntity.swift
-//  Data
+//  RecipesMapEntity.swift
+//  DataRecipes
 //
 //  Created by JHONATAHAN RIVERA on 2/10/25.
 //
 
 import Domain
 
-public struct RecipeEntity: Decodable {
+public struct RecipeMapEntity: Decodable {
     let name: String
     let origin: String
     let latitude: Float
     let longitude: Float
-    let imageUrl: String
 
     enum CodingKeys: String, CodingKey {
         case name
         case origin
         case latitude
         case longitude
-        case imageUrl
     }
 }
 
-extension RecipeEntity {
-    static func mapper(data: [RecipeEntity]) -> [RecipeBusinessModel] {
+extension RecipeMapEntity {
+    static func mapper(data: [RecipeMapEntity]) -> [RecipeMapBusinessModel] {
         data.map {
-            RecipeBusinessModel(
+            RecipeMapBusinessModel(
                 name: $0.name,
                 origin: $0.origin,
                 latitude: $0.latitude,
-                longitude: $0.longitude,
-                imageUrl: $0.imageUrl
+                longitude: $0.longitude
             )
         }
     }
-    
+
 }

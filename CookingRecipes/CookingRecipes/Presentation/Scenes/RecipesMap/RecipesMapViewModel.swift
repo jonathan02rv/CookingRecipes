@@ -22,18 +22,18 @@ class RecipesMapViewModel: RecipesMapViewModelProtocol {
 
     // MARK: - Properties
 
-    let useCase: RecipesListUseCaseProtocol
+    let useCase: RecipesMapUseCaseProtocol
 
     // MARK: - Lifecycle
 
-    init (useCase: RecipesListUseCaseProtocol) {
+    init (useCase: RecipesMapUseCaseProtocol) {
         self.useCase = useCase
     }
 
     // MARK: - Functions
 
     func fetchRecipesLocations() {
-        useCase.fetchRecipes()
+        useCase.fetchRecipesLocations()
     }
 
 }

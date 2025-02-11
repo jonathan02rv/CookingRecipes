@@ -31,7 +31,7 @@ public class RecipesMapUseCase: RecipesMapUseCaseProtocol {
     public func fetchRecipesLocations() {
         Task {
             do {
-                let recipesModel = try await repository.fetchRecipes()
+                let recipesModel = try await repository.fetchRecipesLocations()
                 recipes = recipesModel
                 print("recipesModel Domain: \(recipesModel)")
                 delegate?.reloadRecipesLocations(recipes: recipesModel)

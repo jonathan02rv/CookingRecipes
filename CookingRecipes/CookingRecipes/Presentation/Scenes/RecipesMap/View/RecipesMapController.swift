@@ -7,6 +7,8 @@
 
 import UIKit
 import Combine
+import Domain
+import DataRecipes
 
 class RecipesMapController: UIViewController {
 
@@ -64,13 +66,12 @@ class RecipesMapController: UIViewController {
 
 extension RecipesMapController {
     class func buildRecipesMapController() -> RecipesMapController {
-        let recipes: [RecipesMapModel] = [
-            RecipesMapModel(name: "Paella", origin: "España", latitude: 39.4699, longitude: -0.3763),
-            RecipesMapModel(name: "Sushi", origin: "Japón", latitude: 35.6895, longitude: 139.6917),
-            RecipesMapModel(name: "Tacos", origin: "México", latitude: 19.4326, longitude: -99.1332)
-        ]
         let view = RecipesMapView()
-        let controller = RecipesMapController(view: view, recipes: recipes)
+        let controller = RecipesMapController(view: view, recipes: [])
+        let useCase = RecipesMapUseCase(repository: RecipesMapRepository())
+        let viewModel = RecipesMapViewModel(useCase: useCase)
+        controller.viewModel = viewModel
+        useCase.delegate = viewModel
         return controller
     }
 }
