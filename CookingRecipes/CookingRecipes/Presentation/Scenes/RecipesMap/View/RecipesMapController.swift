@@ -61,17 +61,3 @@ class RecipesMapController: UIViewController {
     }
 
 }
-
-// MARK: - Builder
-
-extension RecipesMapController {
-    class func buildRecipesMapController() -> RecipesMapController {
-        let view = RecipesMapView()
-        let controller = RecipesMapController(view: view, recipes: [])
-        let useCase = RecipesMapUseCase(repository: RecipesMapRepository())
-        let viewModel = RecipesMapViewModel(useCase: useCase)
-        controller.viewModel = viewModel
-        useCase.delegate = viewModel
-        return controller
-    }
-}
