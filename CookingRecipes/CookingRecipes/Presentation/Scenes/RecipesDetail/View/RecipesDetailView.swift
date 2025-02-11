@@ -8,7 +8,7 @@
 import UIKit
 
 protocol RecipesDetailViewDelegate: AnyObject {
-    func displayMap(recipe: RecipeModel)
+    func displayMap(recipe: RecipesMapModel)
 }
 
 protocol RecipesDetailViewProtocol: NSObjectProtocol {
@@ -103,7 +103,8 @@ final class RecipesDetailView: UIView {
 
     @objc func mapButtonTapped() {
         guard let recipe = self.recipe else { return }
-        delegate?.displayMap(recipe: recipe)
+        let mapRecipe = RecipesMapModel(name: recipe.name, origin: recipe.origin, latitude: recipe.latitude, longitude: recipe.longitude)
+        delegate?.displayMap(recipe: mapRecipe)
     }
 
     private func loadImage(from urlString: String) {

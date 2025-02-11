@@ -57,11 +57,6 @@ class RecipesListController: UIViewController {
             .store(in: &cancellables)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        viewModel?.fetchRecipes()
-    }
-
 }
 
 // MARK: - RecipesListViewDelegate

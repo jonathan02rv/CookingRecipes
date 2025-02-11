@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 
 protocol RecipesMapViewProtocol: NSObjectProtocol {
-    func setLocations(recipes: [RecipeModel])
+    func setLocations(recipes: [RecipesMapModel])
 }
 
 final class RecipesMapView: UIView {
@@ -50,7 +50,7 @@ final class RecipesMapView: UIView {
 
 extension RecipesMapView: RecipesMapViewProtocol {
 
-    func setLocations(recipes: [RecipeModel]) {
+    func setLocations(recipes: [RecipesMapModel]) {
         var annotations: [MKPointAnnotation] = []
         recipes.forEach {
             let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees($0.latitude), longitude: CLLocationDegrees($0.longitude))

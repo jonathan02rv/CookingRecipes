@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class RecipesMapController: UIViewController {
 
@@ -15,7 +16,10 @@ class RecipesMapController: UIViewController {
 
     // MARK: - Properties
 
-    let recipes: [RecipeModel]
+    var viewModel: RecipesMapViewModelProtocol?
+    private var cancellables = Set<AnyCancellable>()
+
+    let recipes: [RecipesMapModel]
 
     // MARK: - Lifecycle
 
@@ -23,9 +27,11 @@ class RecipesMapController: UIViewController {
         super.viewDidLoad()
         title = "Map"
         setupView()
+        setupBindings()
+        viewModel?.fetchRecipesLocations()
     }
 
-    init(view: RecipesMapViewProtocol, recipes: [RecipeModel]) {
+    init(view: RecipesMapViewProtocol, recipes: [RecipesMapModel]) {
         self.customView = view
         self.recipes = recipes
         super.init(nibName: nil, bundle: nil)
@@ -43,16 +49,25 @@ class RecipesMapController: UIViewController {
         customView.setLocations(recipes: recipes)
     }
 
+    func setupBindings() {
+        viewModel?.fillContentView
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: { [weak self] recipes in
+                self?.customView.setLocations(recipes: recipes)
+            })
+            .store(in: &cancellables)
+    }
+
 }
 
 // MARK: - Builder
 
 extension RecipesMapController {
     class func buildRecipesMapController() -> RecipesMapController {
-        let recipes: [RecipeModel] = [
-            RecipeModel(name: "Paella", origin: "España", latitude: 39.4699, longitude: -0.3763, imageUrl: "https://example.com/paella.jpg"),
-            RecipeModel(name: "Sushi", origin: "Japón", latitude: 35.6895, longitude: 139.6917, imageUrl: "https://example.com/sushi.jpg"),
-            RecipeModel(name: "Tacos", origin: "México", latitude: 19.4326, longitude: -99.1332, imageUrl: "https://example.com/tacos.jpg")
+        let recipes: [RecipesMapModel] = [
+            RecipesMapModel(name: "Paella", origin: "España", latitude: 39.4699, longitude: -0.3763),
+            RecipesMapModel(name: "Sushi", origin: "Japón", latitude: 35.6895, longitude: 139.6917),
+            RecipesMapModel(name: "Tacos", origin: "México", latitude: 19.4326, longitude: -99.1332)
         ]
         let view = RecipesMapView()
         let controller = RecipesMapController(view: view, recipes: recipes)

@@ -7,13 +7,6 @@
 
 import Foundation
 
-public enum ErrorType: String, Error {
-    case badURL
-    case parseError
-    case netWorkError
-    case generic
-}
-
 public protocol RecipesListUseCaseDelegate: AnyObject {
     func reloadRecipes(recipes: [RecipeBusinessModel])
     func handleError(errorType: ErrorType)

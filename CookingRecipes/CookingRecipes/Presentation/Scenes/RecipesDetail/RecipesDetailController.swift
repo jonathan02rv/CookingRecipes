@@ -48,7 +48,7 @@ class RecipesDetailController: UIViewController {
 
 extension RecipesDetailController: RecipesDetailViewDelegate {
 
-    func displayMap(recipe: RecipeModel) {
+    func displayMap(recipe: RecipesMapModel) {
         let view = RecipesMapView()
         let mapVC = RecipesMapController(view: view, recipes: [recipe])
         navigationController?.pushViewController(mapVC, animated: true)

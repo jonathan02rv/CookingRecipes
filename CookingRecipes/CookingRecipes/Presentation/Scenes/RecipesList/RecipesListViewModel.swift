@@ -33,6 +33,7 @@ class RecipesListViewModel: RecipesListViewModelProtocol {
 }
 
 extension RecipesListViewModel: RecipesListUseCaseDelegate {
+    
     func handleError(errorType: ErrorType) {
         print("ErrorType VM: \(errorType)")
     }
@@ -43,6 +44,5 @@ extension RecipesListViewModel: RecipesListUseCaseDelegate {
         }
         fillContentView.send(recipesViewData)
     }
-    
 
 }
