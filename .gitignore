@@ -49,6 +49,13 @@ playground.xcworkspace
 
 Carthage/Build/
 
+### Custom Attributes ###
+.swiftlint.yml
+*.xcworkspace
+.DS_Store
+.idea
+DerivedData
+
 # fastlane
 #
 # It is recommended to not store the screenshots in the git repo.
