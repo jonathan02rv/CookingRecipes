@@ -12,7 +12,6 @@ import XCTest
 final class RecipesListViewModelTest: XCTestCase {
 
     var sut: RecipesListViewModel!
-    var viewSpy: RecipesListViewSpy!
     var useCaseSpy: RecipesListUseCaseSpy!
 
     // MARK: Test lifecycle
@@ -25,14 +24,12 @@ final class RecipesListViewModelTest: XCTestCase {
     override func tearDown() {
         super.tearDown()
         sut = nil
-        viewSpy = nil
         useCaseSpy = nil
     }
 
     // MARK: Test setup
 
     func setupRecipesListUseCase() {
-        viewSpy = RecipesListViewSpy()
         useCaseSpy = RecipesListUseCaseSpy()
         sut = RecipesListViewModel(useCase: useCaseSpy)
     }
