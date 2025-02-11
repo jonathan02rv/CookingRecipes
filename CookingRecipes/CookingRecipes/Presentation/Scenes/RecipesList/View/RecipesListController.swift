@@ -19,6 +19,7 @@ class RecipesListController: UIViewController {
     // MARK: - Properties
 
     var viewModel: RecipesListViewModelProtocol?
+    var router: RecipesListRoutingLogic?
     private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Lifecycle
@@ -64,23 +65,7 @@ class RecipesListController: UIViewController {
 extension RecipesListController: RecipesListViewDelegate {
 
     func didSelectRowRecipe(rowData: RecipeModel) {
-        let view = RecipesDetailView()
-        let detailVC = RecipesDetailController(view: view, recipe: rowData)
-        navigationController?.pushViewController(detailVC, animated: true)
+        router?.routeToRecipeDetail(with: rowData)
     }
 
-}
-
-// MARK: - Builder
-
-extension RecipesListController {
-    class func buildRecipesListController() -> RecipesListController {
-        let view = RecipesListView()
-        let controller = RecipesListController(view: view)
-        let useCase = RecipesListUseCase(repository: RecipesListRepository())
-        let viewModel = RecipesListViewModel(useCase: useCase)
-        useCase.delegate = viewModel
-        controller.viewModel = viewModel
-        return controller
-    }
 }
