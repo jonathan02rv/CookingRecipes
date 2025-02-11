@@ -8,6 +8,6 @@
       location = "group:Domain/Domain.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Data/Data.xcodeproj">
+      location = "group:DataRecipes/DataRecipes.xcodeproj">
    </FileRef>
 </Workspace>

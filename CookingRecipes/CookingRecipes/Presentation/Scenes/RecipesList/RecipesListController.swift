@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 import Domain
-import Data
+import DataRecipes
 
 class RecipesListController: UIViewController {
 

@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E8E1F7C22D5AC82600789709 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E1F7C12D5AC82600789709 /* Data.framework */; };
-		E8E1F7C32D5AC82600789709 /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8E1F7C12D5AC82600789709 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E8E1F7C62D5AC82900789709 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E1F7C52D5AC82900789709 /* Domain.framework */; };
 		E8E1F7C72D5AC82900789709 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8E1F7C52D5AC82900789709 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E8E1F7EC2D5AC91D00789709 /* DataRecipes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E1F7EB2D5AC91D00789709 /* DataRecipes.framework */; };
+		E8E1F7ED2D5AC91D00789709 /* DataRecipes.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8E1F7EB2D5AC91D00789709 /* DataRecipes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +37,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E8E1F7ED2D5AC91D00789709 /* DataRecipes.framework in Embed Frameworks */,
 				E8E1F7C72D5AC82900789709 /* Domain.framework in Embed Frameworks */,
-				E8E1F7C32D5AC82600789709 /* Data.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,6 +56,7 @@
 		E8DAC7F12D5931FE00E71EC9 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E1F7C12D5AC82600789709 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E1F7C52D5AC82900789709 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8E1F7EB2D5AC91D00789709 /* DataRecipes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataRecipes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -94,8 +95,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8E1F7EC2D5AC91D00789709 /* DataRecipes.framework in Frameworks */,
 				E8E1F7C62D5AC82900789709 /* Domain.framework in Frameworks */,
-				E8E1F7C22D5AC82600789709 /* Data.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +141,7 @@
 		E8DAC76F2D591B9100E71EC9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E8E1F7EB2D5AC91D00789709 /* DataRecipes.framework */,
 				E8E1F7C52D5AC82900789709 /* Domain.framework */,
 				E8E1F7C12D5AC82600789709 /* Data.framework */,
 				E8DAC7F12D5931FE00E71EC9 /* Data.framework */,

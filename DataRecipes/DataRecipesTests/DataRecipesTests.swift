@@ -1,14 +1,14 @@
 //
-//  DataTests.swift
-//  DataTests
+//  DataRecipesTests.swift
+//  DataRecipesTests
 //
-//  Created by JHONATAHAN RIVERA on 2/9/25.
+//  Created by JHONATAHAN RIVERA on 2/10/25.
 //
 
 import XCTest
-@testable import Data
+@testable import DataRecipes
 
-final class DataTests: XCTestCase {
+final class DataRecipesTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
