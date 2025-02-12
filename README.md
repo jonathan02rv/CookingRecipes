@@ -49,16 +49,19 @@ Data Layer - DataRecipes (Framework proyect):
 * Se implementaron unit test para el UseCase del RecipesList y el ViewModel del RecipesList de las capas Presentation y Domain respectivamente.
 * Para correr las unit test de cada capa, seleccionar el target requerido (CookingRecipes ó Domain).
 
+## Diagrama de la Arquitectura:
+
+![MVVM-R](https://github.com/user-attachments/assets/c7e9213e-9d1b-44fc-8d67-e69c439383ff)
+
+
 ## Instalación y Configuración
 
-Clonar el repositorio:
-
+* Clonar el repositorio:
 git clone https://github.com/jonathan02rv/CookingRecipes.git
-cd CookingRecipes
 
-Abrir el proyecto en Xcode y ejecutar en un simulador o dispositivo real.
+* Abrir el proyecto en Xcode y ejecutar en un simulador o dispositivo real.
 
-Contacto
+## Contacto
 
-Para cualquier consulta o contribución, puedes contactar a [jonathan02rv@gmail.com].
-Link GitHub: https://github.com/jonathan02rv
+* Para cualquier consulta o contribución, puedes contactar a [jonathan02rv@gmail.com].
+* Link GitHub: https://github.com/jonathan02rv
