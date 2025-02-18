@@ -28,7 +28,9 @@ class RecipesListRouter: RecipesListRoutingLogic {
 
     func routeToRecipeDetail(with recipe: RecipeModel) {
         let view = RecipesDetailView()
-        let detailVC = RecipesDetailController(view: view, recipe: recipe)
+        let viewModel = RecipesDetailViewModel(recipeModel: recipe)
+        let detailVC = RecipesDetailController(view: view)
+        detailVC.viewModel = viewModel
         viewController?.navigationController?.pushViewController(detailVC, animated: true)
     }
 
