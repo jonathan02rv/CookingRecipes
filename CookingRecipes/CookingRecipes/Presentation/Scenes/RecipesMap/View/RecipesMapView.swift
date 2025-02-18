@@ -62,8 +62,8 @@ extension RecipesMapView: RecipesMapViewProtocol {
         }
         mapView.addAnnotations(annotations)
         if !annotations.isEmpty {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self.mapView.showAnnotations(annotations, animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+                self?.mapView.showAnnotations(annotations, animated: true)
             }
         }
     }
