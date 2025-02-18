@@ -13,11 +13,15 @@ class RecipeCell: UITableViewCell {
 
     static let reuseIdentifier = "RecipeCell"
 
+    // MARK: - Properties
+
+    var imageCache = NSCache<NSString, UIImage>()
+
     // MARK: - Views
 
     let recipeImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 8
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -43,7 +47,7 @@ class RecipeCell: UITableViewCell {
             recipeImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             recipeImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             recipeImageView.widthAnchor.constraint(equalToConstant: 50),
-            recipeImageView.heightAnchor.constraint(equalToConstant: 50),
+            recipeImageView.heightAnchor.constraint(equalToConstant: 40),
 
             recipeNameLabel.leadingAnchor.constraint(equalTo: recipeImageView.trailingAnchor, constant: 10),
             recipeNameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
@@ -62,14 +66,19 @@ class RecipeCell: UITableViewCell {
     // MARK: - Function
 
     private func loadImage(from urlString: String) {
+        if let image = imageCache.object(forKey: urlString as NSString){
+            recipeImageView.image = image
+            return
+        }
         guard let url = URL(string: urlString) else { return }
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
-                DispatchQueue.main.async { [weak self] in
-                    self?.recipeImageView.image = image
-                }
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            guard let self = self, let data = data, let image = UIImage(data: data), error == nil else { return }
+            imageCache.setObject(image, forKey: urlString as NSString)
+            DispatchQueue.main.async { [weak self] in
+                self?.recipeImageView.image = image
             }
         }
+        task.resume()
     }
 
 }
