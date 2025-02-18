@@ -29,6 +29,7 @@ class RecipesListController: UIViewController {
         title = "Recetas"
         setupView()
         setupBindings()
+        router?.startLoading()
         viewModel?.fetchRecipes()
     }
 
@@ -53,6 +54,7 @@ class RecipesListController: UIViewController {
         viewModel?.fillContentView
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] recipes in
+                self?.router?.stopLoading()
                 self?.customView.reloadRows(data: recipes)
             })
             .store(in: &cancellables)
