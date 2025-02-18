@@ -20,17 +20,25 @@ class RecipesListViewModel: RecipesListViewModelProtocol {
 
     let fillContentView: PassthroughSubject<[RecipeModel], Never> = PassthroughSubject()
 
+    // MARK: - Properties
+
     let useCase: RecipesListUseCaseProtocol
+
+    // MARK: - Lifecycle
 
     init (useCase: RecipesListUseCaseProtocol) {
         self.useCase = useCase
     }
+
+    // MARK: - Functions
 
     func fetchRecipes() {
         useCase.fetchRecipes()
     }
 
 }
+
+// MARK: - RecipesListUseCaseDelegate
 
 extension RecipesListViewModel: RecipesListUseCaseDelegate {
     

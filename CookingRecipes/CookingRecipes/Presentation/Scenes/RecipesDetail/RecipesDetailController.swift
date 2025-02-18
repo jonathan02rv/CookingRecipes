@@ -15,7 +15,7 @@ class RecipesDetailController: UIViewController {
 
     // MARK: - Properties
 
-    let recipe: RecipeModel
+    var viewModel: RecipesDetailViewModelProtocol?
 
     // MARK: - Lifecycle
 
@@ -25,9 +25,8 @@ class RecipesDetailController: UIViewController {
         setupView()
     }
 
-    init(view: RecipesDetailViewProtocol, recipe: RecipeModel) {
+    init(view: RecipesDetailViewProtocol) {
         self.customView = view
-        self.recipe = recipe
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -40,7 +39,8 @@ class RecipesDetailController: UIViewController {
     func setupView() {
         guard let contentView = self.customView as? UIView else { return }
         self.view = contentView
-        customView.fillContent(data: recipe)
+        guard let recipeModel = viewModel?.getRecipeModel() else { return }
+        customView.fillContent(data: recipeModel)
         customView.delegate = self
     }
 
