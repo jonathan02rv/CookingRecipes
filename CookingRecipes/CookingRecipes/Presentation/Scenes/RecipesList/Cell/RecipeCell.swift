@@ -9,11 +9,15 @@ import UIKit
 
 class RecipeCell: UITableViewCell {
 
+    // MARK: - Identifier cell view
+
     static let reuseIdentifier = "RecipeCell"
+
+    // MARK: - Views
 
     let recipeImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 8
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -26,6 +30,8 @@ class RecipeCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+
+    // MARK: - Lifecycle
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -53,12 +59,14 @@ class RecipeCell: UITableViewCell {
         loadImage(from: recipe.imageUrl)
     }
 
+    // MARK: - Function
+
     private func loadImage(from urlString: String) {
         guard let url = URL(string: urlString) else { return }
         DispatchQueue.global().async {
             if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
-                DispatchQueue.main.async {
-                    self.recipeImageView.image = image
+                DispatchQueue.main.async { [weak self] in
+                    self?.recipeImageView.image = image
                 }
             }
         }
