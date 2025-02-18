@@ -111,8 +111,8 @@ final class RecipesDetailView: UIView {
         guard let url = URL(string: urlString) else { return }
         DispatchQueue.global().async {
             if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
-                DispatchQueue.main.async {
-                    self.recipeImageView.image = image
+                DispatchQueue.main.async { [weak self] in
+                    self?.recipeImageView.image = image
                 }
             }
         }
