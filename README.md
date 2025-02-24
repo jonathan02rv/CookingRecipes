@@ -51,7 +51,8 @@ Data Layer - DataRecipes (Framework proyect):
 
 ## Diagrama de la Arquitectura:
 
-![MVVM-R](https://github.com/user-attachments/assets/c7e9213e-9d1b-44fc-8d67-e69c439383ff)
+
+![MVVM-R](https://github.com/user-attachments/assets/3a7a8ed4-9816-4517-8acc-cc4a9d2b5fda)
 
 
 ## Instalación y Configuración
