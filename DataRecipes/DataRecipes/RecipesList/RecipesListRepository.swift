@@ -21,7 +21,7 @@ public class RecipesListRepository: RecipesListRepositoryProtocol {
 
     public func fetchRecipes() async throws -> [RecipeBusinessModel] {
         do {
-            let path = "/recipesfood"
+            let path = "/v3/21f6e139-be2d-4bd9-b10a-fe1611639c45"
             let data = try await dataSource.fetchRecipes(path: path)
             return RecipeEntity.mapper(data: data)
         } catch {
