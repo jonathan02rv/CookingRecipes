@@ -11,7 +11,7 @@ public class URLSessionDataSource {
     let baseUrl: String
 
     public init() {
-        baseUrl = "https://demo3434909.mockable.io"
+        baseUrl = "https://run.mocky.io"
     }
 
 }
