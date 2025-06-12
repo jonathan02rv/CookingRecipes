@@ -11,9 +11,8 @@ public class URLSessionDataSource {
     let baseUrl: String
 
     public init() {
-        baseUrl = "https://run.mocky.io"
+        baseUrl = "https://demo3434909.mockable.io"
     }
-
 }
 
 // MARK: - RecipesListDataSourceProtocol
