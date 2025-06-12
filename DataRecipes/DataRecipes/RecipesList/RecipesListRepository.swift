@@ -8,7 +8,7 @@
 import Domain
 
 public protocol RecipesListDataSourceProtocol {
-    func fetchRecipes(path: String) async throws -> [RecipeEntity]
+    func fetchRecipes(path: String) async throws -> [RecipeDTO]
 }
 
 public class RecipesListRepository: RecipesListRepositoryProtocol {
@@ -19,11 +19,11 @@ public class RecipesListRepository: RecipesListRepositoryProtocol {
         self.dataSource = dataSource
     }
 
-    public func fetchRecipes() async throws -> [RecipeBusinessModel] {
+    public func fetchRecipes() async throws -> [RecipeBusinessEntity] {
         do {
             let path = "/recipesfood"
             let data = try await dataSource.fetchRecipes(path: path)
-            return RecipeEntity.mapper(data: data)
+            return RecipeDTO.mapper(data: data)
         } catch {
             guard let errorResponse = (error as? ErrorRequest) else {
                 throw ErrorRequest.unknown.getTypeError()

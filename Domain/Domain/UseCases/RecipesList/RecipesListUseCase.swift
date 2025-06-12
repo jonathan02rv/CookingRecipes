@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol RecipesListUseCaseDelegate: AnyObject {
-    func reloadRecipes(recipes: [RecipeBusinessModel])
+    func reloadRecipes(recipes: [RecipeBusinessEntity])
     func handleError(errorType: ErrorType)
 }
 
@@ -19,7 +19,7 @@ public protocol RecipesListUseCaseProtocol {
 
 public class RecipesListUseCase: RecipesListUseCaseProtocol {
 
-    var recipes = [RecipeBusinessModel]()
+    var recipes = [RecipeBusinessEntity]()
 
     public weak var delegate: RecipesListUseCaseDelegate?
     let repository: RecipesListRepositoryProtocol

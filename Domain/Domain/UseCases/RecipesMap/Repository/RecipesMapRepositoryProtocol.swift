@@ -6,5 +6,5 @@
 //
 
 public protocol RecipesMapRepositoryProtocol {
-    func fetchRecipesLocations() async throws -> [RecipeMapBusinessModel]
+    func fetchRecipesLocations() async throws -> [RecipeMapBusinessEntity]
 }

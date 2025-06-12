@@ -12,12 +12,12 @@ class RecipesListRepositorySpy: RecipesListRepositoryProtocol {
     var requestFailed = false
     var fetchRecipesCalled = false
 
-    func fetchRecipes() async throws -> [RecipeBusinessModel] {
+    func fetchRecipes() async throws -> [RecipeBusinessEntity] {
         fetchRecipesCalled = true
         if requestFailed {
             throw ErrorType.generic
         } else {
-            return [RecipeBusinessModel]()
+            return [RecipeBusinessEntity]()
         }
     }
 

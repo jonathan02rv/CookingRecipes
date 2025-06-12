@@ -19,7 +19,7 @@ public class URLSessionDataSource {
 
 extension URLSessionDataSource: RecipesListDataSourceProtocol {
 
-    public func fetchRecipes(path: String) async throws -> [RecipeEntity] {
+    public func fetchRecipes(path: String) async throws -> [RecipeDTO] {
         let urlRequest = baseUrl + path
         guard let url = URL(string: urlRequest) else {
             throw ErrorRequest.badURL
@@ -28,7 +28,7 @@ extension URLSessionDataSource: RecipesListDataSourceProtocol {
             let (data, _) = try await urlSession.data(from: url)
             let jsonObject = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
             print("jsonObject: \(jsonObject)")
-            if let moviesResponse = try? JSONDecoder().decode([RecipeEntity].self, from: data) {
+            if let moviesResponse = try? JSONDecoder().decode([RecipeDTO].self, from: data) {
                 return moviesResponse
             } else {
                 print("parseError")
@@ -46,7 +46,7 @@ extension URLSessionDataSource: RecipesListDataSourceProtocol {
 
 extension URLSessionDataSource: RecipesMapDataSourceProtocol {
 
-    public func fetchRecipesLocations(path: String) async throws -> [RecipeMapEntity] {
+    public func fetchRecipesLocations(path: String) async throws -> [RecipeMapDTO] {
         let urlRequest = baseUrl + path
         guard let url = URL(string: urlRequest) else {
             throw ErrorRequest.badURL
@@ -55,7 +55,7 @@ extension URLSessionDataSource: RecipesMapDataSourceProtocol {
             let (data, _) = try await urlSession.data(from: url)
             let jsonObject = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
             print("jsonObject: \(jsonObject)")
-            if let moviesResponse = try? JSONDecoder().decode([RecipeMapEntity].self, from: data) {
+            if let moviesResponse = try? JSONDecoder().decode([RecipeMapDTO].self, from: data) {
                 return moviesResponse
             } else {
                 print("parseError")

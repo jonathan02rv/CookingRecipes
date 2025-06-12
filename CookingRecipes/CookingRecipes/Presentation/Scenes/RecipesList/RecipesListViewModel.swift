@@ -46,7 +46,7 @@ extension RecipesListViewModel: RecipesListUseCaseDelegate {
         print("ErrorType VM: \(errorType)")
     }
     
-    func reloadRecipes(recipes: [RecipeBusinessModel]) {
+    func reloadRecipes(recipes: [RecipeBusinessEntity]) {
         let recipesViewData: [RecipeModel] = recipes.map {
             RecipeModel(name: $0.name, origin: $0.origin, latitude: $0.latitude, longitude: $0.longitude, imageUrl: $0.imageUrl)
         }

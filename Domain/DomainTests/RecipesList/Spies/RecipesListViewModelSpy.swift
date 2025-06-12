@@ -12,7 +12,7 @@ class RecipesListViewModelSpy: RecipesListUseCaseDelegate {
     var reloadRecipesCalled = false
     var handleErrorCalled = false
 
-    func reloadRecipes(recipes: [RecipeBusinessModel]) {
+    func reloadRecipes(recipes: [RecipeBusinessEntity]) {
         reloadRecipesCalled = true
     }
     
